@@ -22,10 +22,11 @@
 
         <Spinner
             android:id="@+id/hold_currency"
-            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:spinnerMode="dialog"/>
+
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
