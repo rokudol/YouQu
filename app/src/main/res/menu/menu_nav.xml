@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/zhihu_details"
+            android:icon="@mipmap/zhihu"
+            android:title="@string/zhihu_details"/>
+        <item
+            android:id="@+id/tvshow"
+            android:icon="@mipmap/tvshow"
+            android:title="@string/tvshow"/>
+
+    </group>
+    <item android:title="小工具">
+        <menu>
+            <item
+                android:id="@+id/exchange"
+                android:icon="@mipmap/exchange"
+                android:title="@string/exchange"/>
+        </menu>
+    </item>
+    <item android:title="@string/setting">
+        <menu>
+            <item
+                android:id="@+id/night_mode"
+                android:icon="@mipmap/night_mode"
+                android:title="@string/night_mode"
+                app:actionLayout="@layout/night_mode_switch"
+                app:showAsAction="always"/>
+        </menu>
+    </item>
+</menu>

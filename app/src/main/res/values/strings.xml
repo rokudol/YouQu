@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">有趣</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- 共享过度动画 -->
+    <string name="transition">transition_animation_news_photos</string>
+
+    <string name="zhihu_details">知乎日报</string>
+    <string name="tvshow">电视节目单</string>
+    <string name="exchange">汇率转换</string>
+    <string name="setting">设置</string>
+    <string name="night_mode">夜间模式</string>
+    <string name="comment">评论</string>
+    <string name="share">分享</string>
+    <string name="no_comment">还没有评论，晚点再来看吧</string>
+    <string name="query_tvname">请输入要查询的电视台名称</string>
+    <string name="query_time">请选择要查询的时间</string>
+    <string name="query">查询</string>
+    <string name="year">年</string>
+    <string name="month">月</string>
+    <string name="day">日</string>
+
+    <string name="comment_expand">收起</string>
+
+    <string name="cancel">取消</string>
+    <string name="yes">确定</string>
+
+    <string name="switch_currency">请选择源币种</string>
+    <string name="target_currency">请选择目标币种</string>
+    <string name="money">请输入数额</string>
+</resources>

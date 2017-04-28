@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="empty">&#160;</string-array>
+    <string-array name="no_more">
+        <item>没有更多数据了</item>
+    </string-array>
+</resources>
