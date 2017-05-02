@@ -1,6 +1,6 @@
 package rokudol.com.youqu.tvshow;
 
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -55,6 +55,7 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 	private String tvId;
 	private String time;
 	private List<TvJson.Result> list;//获取保存的list集合
+	public static final int REQUEST = 1;//dialogFragment传值时所需的标记
 
 	@Inject
 	TvShowPresenterImpl mPresenter;
@@ -87,11 +88,6 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 	protected void initView() {
 		mActivity = (HomeActivity) getActivity();
 		DaggerComponent.builder().build().inject(this);
-		Bundle bundle = getArguments();
-		if (bundle != null) {
-			String time = bundle.getString("time");
-			queryTime.setText(time);
-		}
 		mPrensenter = mPresenter;
 		mPrensenter.onAttachView(this);
 		tvName = SharedPreferencesUtil.getString(getActivity(), Constants.TVNAME, "");
@@ -122,6 +118,7 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 		switch (view.getId()) {
 			case R.id.query_time:
 				SwitchTimeDialog fragment = new SwitchTimeDialog();
+				fragment.setTargetFragment(TvShowFragment.this, REQUEST);
 				fragment.show(getFragmentManager(), "switchTimeDialog");
 				break;
 			case R.id.query_tvname:
@@ -186,5 +183,14 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 		rv.setLayoutManager(new LinearLayoutManager(getActivity()));
 		rv.setAdapter(adapter);
 		tvShowName.setText(tvName);
+	}
+
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == REQUEST) {
+			String evaluate = data.getStringExtra(SwitchTimeDialog.RESPONSE_EVALUATE);
+			queryTime.setText(evaluate);
+		}
 	}
 }

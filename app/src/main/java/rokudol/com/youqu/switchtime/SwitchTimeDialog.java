@@ -1,10 +1,10 @@
 package rokudol.com.youqu.switchtime;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,6 +40,8 @@ public class SwitchTimeDialog extends DialogFragment {
 	private String month;
 	private String day;
 
+	public static final String RESPONSE_EVALUATE = "response";//fragment传值所需标记
+
 	@Nullable
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -68,21 +70,25 @@ public class SwitchTimeDialog extends DialogFragment {
 	public void onClick(View view) {
 		switch (view.getId()) {
 			case R.id.time_yes:
-				Intent intent = new Intent();
-				intent.putExtra("time", getYear() + "-" + getMonth() + "-" + getDay());
-				TvShowFragment fragment = new TvShowFragment();
-				FragmentTransaction transaction = getFragmentManager().beginTransaction();
-				transaction.replace(R.id.framelayout, fragment);
-				Bundle bundle = new Bundle();
-				bundle.putString("time", getYear() + "-" + getMonth() + "-" + getDay());
-				fragment.setArguments(bundle);
-				transaction.commit();
+				setResult();
 				dismiss();
 				break;
 			case R.id.time_cancel:
 				dismiss();
 				break;
 
+		}
+	}
+
+	protected void setResult() {
+		//如果没有targetFragment则不执行该方法
+		if (getTargetFragment() == null) {
+			return;
+		} else {
+			Intent intent = new Intent();
+			intent.putExtra(RESPONSE_EVALUATE, getYear() + "-" + getMonth() + "-" + getDay());
+			getTargetFragment().onActivityResult(TvShowFragment.REQUEST,
+					Activity.RESULT_OK, intent);
 		}
 	}
 
