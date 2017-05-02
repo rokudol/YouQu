@@ -15,6 +15,7 @@ import rokudol.com.youqu.constants.Constants;
 
 /**
  * Created by rokudo on 2017/4/11.
+ * 网络请求的工具类
  */
 
 public class Request {

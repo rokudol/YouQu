@@ -7,6 +7,7 @@ import com.bumptech.glide.Glide;
 
 /**
  * Created by rokudo on 2017/4/12.
+ * Glide的工具类
  */
 
 public class GlideUtil {

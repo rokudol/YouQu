@@ -13,15 +13,15 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity<T extends BasePresenter> extends AppCompatActivity {
 
 	protected T mPrensenter;
-
+	//获取布局xml的id
 	protected abstract int getLayoutId();
-
+	//初始化view
 	protected abstract void initView();
-
+	//初始化toolbar
 	protected abstract void initToolbar();
-
+	//初始化drawerlayout
 	protected abstract void initDrawer();
-
+	//在所有初始化工作完成后需要做的工作
 	protected abstract void work();
 
 	@Override
@@ -37,7 +37,9 @@ public abstract class BaseActivity<T extends BasePresenter> extends AppCompatAct
 		}
 		work();
 	}
-
+	/*
+	* 若prensenter不为空则在执行onDestroy时摧毁mPrensenter
+	* */
 	@Override
 	protected void onDestroy() {
 		super.onDestroy();

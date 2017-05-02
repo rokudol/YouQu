@@ -71,7 +71,9 @@ public class SwitchAreaDialog extends DialogFragment implements SwitchAreaView {
 		return view;
 	}
 
-
+	/*
+	* 省市两级滑动时操作的数据
+	* */
 	private void setPicker() {
 		provincePicker.setOnItemSelectedListener(new WheelPicker.OnItemSelectedListener() {
 			@Override
@@ -95,21 +97,27 @@ public class SwitchAreaDialog extends DialogFragment implements SwitchAreaView {
 		});
 	}
 
-
+	/*
+	* 将省数据添加进第一级控件
+	* */
 	@Override
 	public void addProvince(List<String> provinceNameList, List<String> provinceIdList) {
 		this.provinceNameList = provinceNameList;
 		this.provinceIdList = provinceIdList;
 		provincePicker.setData(provinceNameList);
 	}
-
+	/*
+	* 将城数据添加进第二级控件
+	* */
 	@Override
 	public void addCity(List<String> cityNameList, List<String> cityIdList) {
 		this.cityNameList = cityNameList;
 		this.cityIdList = cityIdList;
 		cityPicker.setData(cityNameList);
 	}
-
+	/*
+	* 将区数据添加进第三级控件
+	* */
 	@Override
 	public void addArea(List<String> areaNameList, List<String> areaIdList) {
 		this.areaNameList = areaNameList;
@@ -117,7 +125,9 @@ public class SwitchAreaDialog extends DialogFragment implements SwitchAreaView {
 		areaPicker.setData(areaNameList);
 		isEmpty = false;
 	}
-
+	/*
+	* 没有更多数据时清空数据
+	* */
 	@Override
 	public void noMore(List<String> noMore) {
 		areaPicker.setData(noMore);

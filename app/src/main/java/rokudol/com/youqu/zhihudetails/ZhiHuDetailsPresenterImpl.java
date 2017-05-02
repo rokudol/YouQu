@@ -10,7 +10,6 @@ import javax.inject.Inject;
 import rokudol.com.youqu.adapter.ZhiHuDetailsAdapter;
 import rokudol.com.youqu.base.BasePresenterImpl;
 import rokudol.com.youqu.beans.ZhiHuBean;
-import rokudol.com.youqu.constants.Constants;
 import rokudol.com.youqu.requests.RequesCallback;
 
 /**
@@ -20,7 +19,6 @@ import rokudol.com.youqu.requests.RequesCallback;
 public class ZhiHuDetailsPresenterImpl extends BasePresenterImpl<ZhiHuDetails, ZhiHuBean> implements ZhiHuDetailsPresenter, RequesCallback<ZhiHuBean> {
 	private ZhiHuDetailsModelImpl mModel;
 	private List<ZhiHuBean> list;
-	Constants constants=new Constants();
 
 	@Inject
 	public ZhiHuDetailsPresenterImpl(ZhiHuDetailsModelImpl mModel) {

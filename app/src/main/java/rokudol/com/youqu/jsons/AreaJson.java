@@ -7,6 +7,15 @@ import java.util.List;
  */
 
 public class AreaJson {
+	/*
+	* @param id:该地区的id
+	* @param name:该地区的名字
+	* @param parentid:该地区的上一级地区的id
+	* @param parentname:该地区的上一级地区的名字
+	* @param areacode:该地区的代码
+	* @param ripcode:
+	* @param depth：该地区是第几级
+	* */
 	private String status;
 	private String msg;
 	private List<Result> result;

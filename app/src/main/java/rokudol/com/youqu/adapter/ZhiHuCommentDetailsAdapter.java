@@ -49,7 +49,9 @@ public class ZhiHuCommentDetailsAdapter extends RecyclerView.Adapter<ZhiHuCommen
 		holder.commentLike.setText(list.get(0).getCommentlist().get(position).getLikes());
 		GlideUtil.setImage(mContext, list.get(0).getCommentlist().get(position).getAvatar(),
 				R.drawable.ic_load_fail, holder.img);
-
+		/*
+		* 若被回复的消息不为空则将被回复的消息加载出来
+		* */
 		if (list.get(0).getCommentlist().get(position).getReply_to() != null
 				&& list.get(0).getCommentlist().get(position).getReply_to().getId() != 0 + "") {
 			holder.commentReply.setVisibility(View.VISIBLE);

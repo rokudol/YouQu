@@ -7,6 +7,17 @@ import java.util.List;
  */
 
 public class WeatherJson {
+	/*
+	* @param area:查到的地区名
+	* @param areaid:查到的地区id
+	* @param hourList:24小时预报列表
+	* @param weather_code:天气编码
+	* @param time:预报时间
+	* @param wind_direction:风向
+	* @param wind_power:风力
+	* @param weather:天气名称
+	* @param temperature:温度
+	* */
 	private ShowapiResBody showapi_res_body;
 	private String showapi_res_code;
 	private String showapi_res_error;

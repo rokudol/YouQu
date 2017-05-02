@@ -4,6 +4,7 @@ import java.util.List;
 
 /**
  * Created by rokudo on 2017/4/12.
+ * 让WebView可以设置js,css的工具类
  */
 
 public class HtmlUtil {

@@ -137,6 +137,9 @@ public class HomeActivity extends BaseActivity implements HomeView {
 		});
 	}
 
+	/*
+	* 夜间模式
+	* */
 	private void initNightModeSwitch() {
 		MenuItem menuNightMode = nav.getMenu().findItem(R.id.night_mode);
 		SwitchCompat dayNightSwitch = (SwitchCompat) MenuItemCompat
@@ -175,29 +178,27 @@ public class HomeActivity extends BaseActivity implements HomeView {
 	protected void work() {
 		goZhiHuDetails();
 	}
-
+	/*
+	* 跳转到知乎详情页
+	* */
 	private void goZhiHuDetails() {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = zhiHuDetails;
-//		if (getCurrentfragment() == null) {
 		ft.replace(R.id.framelayout, fragment);
-//			ft.addToBackStack(null);
 		ft.commit();
-//		} else {
-//			ft.hide(getCurrentfragment());
-//			ft.add(R.id.framelayout, fragment);
-//			ft.addToBackStack(null);
-//			ft.commit();
-//		}
 	}
-
+	/*
+	* 跳转到汇率换算页
+	* */
 	private void goExChange() {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = new ExChangeFragment();
 		ft.replace(R.id.framelayout, fragment);
 		ft.commit();
 	}
-
+	/*
+	* 跳转到电视节目页
+	* */
 	private void goTvShow() {
 		FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 		Fragment fragment = tvShow;
@@ -205,17 +206,6 @@ public class HomeActivity extends BaseActivity implements HomeView {
 		ft.commit();
 	}
 
-
-	public Fragment getCurrentfragment() {
-		Fragment current = getSupportFragmentManager().findFragmentById(R.id.framelayout);
-		if (current != null && current.isHidden()) {
-			Fragment fragment = zhiHuDetails;
-			if (!fragment.isHidden()) {
-				current = fragment;
-			}
-		}
-		return current;
-	}
 
 	private void setLocation() {
 		//初始化定位

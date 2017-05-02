@@ -17,7 +17,6 @@ import rokudol.com.youqu.requests.Request;
  */
 
 public class SwitchAreaModelImpl implements SwitchAreaModel {
-	private AreaJson values;
 
 	@Override
 	public void requestProvince(String id, final ProvinceCallback<AreaBean> callback) {
@@ -108,7 +107,6 @@ public class SwitchAreaModelImpl implements SwitchAreaModel {
 					public void onNext(AreaJson value) {
 						List<String> nameList = new ArrayList<>();
 						List<String> idList = new ArrayList<>();
-						values = value;
 						AreaBean bean = new AreaBean();
 						for (int i = 0; i < value.getResult().size(); i++) {
 							nameList.add(value.getResult().get(i).getName());

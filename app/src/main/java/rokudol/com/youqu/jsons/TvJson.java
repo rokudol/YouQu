@@ -7,6 +7,12 @@ import java.util.List;
  */
 
 public class TvJson {
+	/*
+	* @param tvid:该电视台id
+	* @param name:该电视台名称
+	* @param parentid：该电视台的上一级电视台id
+	* @param istv:
+	* */
 	private String status;
 	private String msg;
 	private List<Result> result;

@@ -92,6 +92,7 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 		mPrensenter.onAttachView(this);
 		tvName = SharedPreferencesUtil.getString(getActivity(), Constants.TVNAME, "");
 		tvId = SharedPreferencesUtil.getString(getActivity(), Constants.TVID, "");
+		//若电视台名称和id为空则请求数据，否则直接将名字添加到控件并显示
 		if (tvName.equals("") && tvId.equals("") || tvName == null && tvId == null) {
 			mPresenter.requestTv();
 		} else {
@@ -137,7 +138,9 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 
 		}
 	}
-
+	/*
+	* 将电视台的数据添加进AutoCompleteTextView中，先从缓存中获取数据，若缓存中没有数据则请求网络数据
+	* */
 	private void setTvItem() {
 		list = new ArrayList<>();
 		list = SharedPreferencesUtil.getTvList(getActivity(), Constants.TVLIST, "");

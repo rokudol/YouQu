@@ -9,6 +9,7 @@ import rokudol.com.youqu.R;
 
 /**
  * Created by rokudo on 2017/4/27.
+ * 为货币添加国旗的工具类
  */
 
 public class CountryImgUtil {

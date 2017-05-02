@@ -11,6 +11,9 @@ import rokudol.com.youqu.jsons.AllCurrency;
  */
 
 public class ExChangeBean {
+	/*
+	* @param currencyList:货币
+	* */
 	@Inject
 	public ExChangeBean() {
 

@@ -7,6 +7,13 @@ import java.util.List;
  */
 
 public class TvShowJson {
+	/*
+	* @param tvid:该电视台id
+	* @param name:该电视台名称
+	* @param date:查询的时间
+	* @param name:电视节目名称
+	* @param starttime:该电视节目开始时间
+	* */
 	private String status;
 	private String msg;
 	private Result result;

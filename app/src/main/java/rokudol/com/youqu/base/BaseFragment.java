@@ -34,7 +34,9 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment {
 		work();
 		return view;
 	}
-
+	/*
+	* 若prensenter不为空则在执行onDestroy时摧毁mPrensenter
+	* */
 	@Override
 	public void onDestroyView() {
 		super.onDestroyView();

@@ -5,6 +5,12 @@ package rokudol.com.youqu.jsons;
  */
 
 public class ZhiHuExtraJson {
+	/*
+	* @param long_comments:长评论总数
+	* @param popularity:点赞总数
+	* @param short_comments:短评论总数
+	* @param comments:评论总数
+	* */
 	private int long_comments;
 	private int popularity;
 	private int short_comments;

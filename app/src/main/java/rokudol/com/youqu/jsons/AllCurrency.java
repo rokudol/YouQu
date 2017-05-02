@@ -8,6 +8,10 @@ import java.util.List;
  */
 
 public class AllCurrency {
+	/*
+	* @param currency:货币代码
+	* @param name:货币名称
+	* */
 	private String status;
 	private String msg;
 	private List<Result> result;

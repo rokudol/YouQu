@@ -7,6 +7,18 @@ import java.util.List;
  */
 
 public class ZhiHuNewsDetailsJson {
+	/*
+	* @param body:HTML 格式的新闻
+	* @param image_source:图片的内容提供方。为了避免被起诉非法使用图片，在显示图片时最好附上其版权信息。
+	* @param title:新闻标题
+	* @param image:获得的图片同 最新消息 获得的图片分辨率不同。这里获得的是在文章浏览界面中使用的大图。
+	* @param share_url:供在线查看内容与分享至 SNS 用的 URL
+	* @param js: 供手机端的 WebView(UIWebView) 使用
+	* @param ga_prefix:供 Google Analytics 使用
+	* @param type:新闻的类型
+	* @param id:新闻的 id
+	* @param css:供手机端的 WebView(UIWebView) 使用
+	* */
 	private String body;
 
 	private String image_source;

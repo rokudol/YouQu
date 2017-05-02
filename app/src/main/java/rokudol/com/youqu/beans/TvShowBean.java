@@ -12,6 +12,11 @@ import rokudol.com.youqu.jsons.TvShowJson;
  */
 
 public class TvShowBean {
+	/*
+	* @param tvResults:电视台所有返回的数据
+	* @param tvShowList:电视节目所有返回的数据
+	* @param tvName:电视台名称
+	* */
 	private List<TvJson.Result> tvResults;
 	private List<TvShowJson.Result.Program> tvShowList;
 	private String tvName;

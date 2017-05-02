@@ -12,6 +12,7 @@ import rokudol.com.youqu.jsons.TvJson;
 
 /**
  * Created by rokudo on 2017/4/11.
+ * SP的工具类
  */
 
 public class SharedPreferencesUtil {

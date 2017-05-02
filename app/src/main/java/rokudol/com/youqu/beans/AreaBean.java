@@ -7,6 +7,11 @@ import java.util.List;
  */
 
 public class AreaBean {
+	/*
+	* @param noMore:没有更多数据
+	* @param nameList:地区名称
+	* @param idList:地区id
+	* */
 	private List<String> noMore;
 	private List<String> nameList;
 	private List<String> idList;

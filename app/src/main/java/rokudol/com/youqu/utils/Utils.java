@@ -4,6 +4,7 @@ import android.content.Context;
 
 /**
  * Created by rokudo on 2017/4/25.
+ * 综合的工具类
  */
 
 public class Utils {

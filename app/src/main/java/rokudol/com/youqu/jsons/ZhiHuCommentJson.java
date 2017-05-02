@@ -7,7 +7,21 @@ import java.util.List;
  */
 
 public class ZhiHuCommentJson {
-
+	/*
+	* @param comments:评论列表
+	*   @param author:评论作者
+	*   @param content:评论的内容
+	*   @param avatar:用户头像图片地址
+	*   @param id:评论者的唯一标识
+	*   @param likes:评论所获得赞的数量
+	*   @param time:评论时间
+	* @param reply_to:所回复的消息
+	*   @param content:原消息的内容
+	*   @param status:消息状态，0为正常，非0为已被删除
+	*   @param id:被回复者的唯一标识
+	*   @param author:被回复者
+	*   @param err_msg:错误消息，仅当status为非0时出现
+	* */
 	private List<Comments> comments;
 
 	public List<Comments> getComments() {

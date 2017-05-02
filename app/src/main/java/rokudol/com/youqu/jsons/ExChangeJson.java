@@ -7,6 +7,15 @@ import java.util.List;
  */
 
 public class ExChangeJson {
+	/*
+	* @param from:源货币
+	* @param to:目标货币
+	* @param formname:源货币名称
+	* @param toname:目标货币名称
+	* @param updatetime:汇率更新时间
+	* @param rate:汇率
+	* @param camount:换算后所得结果
+	* */
 	private String status;
 	private String msg;
 	private List<Result> result;

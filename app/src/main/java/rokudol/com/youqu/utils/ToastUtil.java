@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 /**
  * Created by rokudo on 2017/4/12.
+ * Toast提示工具类
  */
 
 public class ToastUtil {
