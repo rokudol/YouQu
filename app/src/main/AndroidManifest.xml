@@ -35,14 +35,16 @@
         android:roundIcon="@mipmap/ic"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".home.HomeActivity"
-            android:screenOrientation="portrait">
+        <activity android:name=".welcome.WelComeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".home.HomeActivity"
+            android:screenOrientation="portrait">
         </activity>
         <activity
             android:name=".zhihudetailsinfo.ZhiHuDetailsInfo"

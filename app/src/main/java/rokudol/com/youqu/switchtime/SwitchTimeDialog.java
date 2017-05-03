@@ -40,7 +40,7 @@ public class SwitchTimeDialog extends DialogFragment {
 	private String month;
 	private String day;
 
-	public static final String RESPONSE_EVALUATE = "response";//fragment传值所需标记
+	public static final String RESPONSE = "response";//fragment传值所需标记
 
 	@Nullable
 	@Override
@@ -86,7 +86,7 @@ public class SwitchTimeDialog extends DialogFragment {
 			return;
 		} else {
 			Intent intent = new Intent();
-			intent.putExtra(RESPONSE_EVALUATE, getYear() + "-" + getMonth() + "-" + getDay());
+			intent.putExtra(RESPONSE, getYear() + "-" + getMonth() + "-" + getDay());
 			getTargetFragment().onActivityResult(TvShowFragment.REQUEST,
 					Activity.RESULT_OK, intent);
 		}

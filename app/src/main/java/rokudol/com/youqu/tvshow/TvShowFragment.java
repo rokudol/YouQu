@@ -138,6 +138,7 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 
 		}
 	}
+
 	/*
 	* 将电视台的数据添加进AutoCompleteTextView中，先从缓存中获取数据，若缓存中没有数据则请求网络数据
 	* */
@@ -192,7 +193,7 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		if (requestCode == REQUEST) {
-			String evaluate = data.getStringExtra(SwitchTimeDialog.RESPONSE_EVALUATE);
+			String evaluate = data.getStringExtra(SwitchTimeDialog.RESPONSE);
 			queryTime.setText(evaluate);
 		}
 	}
