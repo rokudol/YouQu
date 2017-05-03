@@ -22,6 +22,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import rokudol.com.youqu.R;
 import rokudol.com.youqu.home.HomeActivity;
+import rokudol.com.youqu.utils.ToastUtil;
 
 /**
  * Created by rokudo on 2017/5/3.
@@ -51,6 +52,9 @@ public class WelComeActivity extends AppCompatActivity {
 		animateImage();
 	}
 
+	/*
+	* 给壁纸添加动画
+	* */
 	private void animateImage() {
 		ObjectAnimator animatorX = ObjectAnimator.ofFloat(welcomeImg, "scaleX", 1f, SCALE_END);
 		ObjectAnimator animatorY = ObjectAnimator.ofFloat(welcomeImg, "scaleY", 1f, SCALE_END);
@@ -66,6 +70,9 @@ public class WelComeActivity extends AppCompatActivity {
 		});
 	}
 
+	/*
+	* 动画完成后跳转到主页
+	* */
 	private void finishActivity() {
 		io.reactivex.Observable.timer(1000, TimeUnit.MILLISECONDS)
 				.subscribeOn(Schedulers.io())
@@ -85,7 +92,7 @@ public class WelComeActivity extends AppCompatActivity {
 
 					@Override
 					public void onError(Throwable e) {
-
+						ToastUtil.ToastShort(WelComeActivity.this, "启动失败,请稍后重试");
 					}
 
 					@Override
