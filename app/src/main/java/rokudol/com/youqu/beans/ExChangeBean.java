@@ -19,13 +19,22 @@ public class ExChangeBean {
 
 	}
 
-	private List<AllCurrency.Result> currencyList;
+	private List<AllCurrency.Result> allCurrencyList;
+	private String toMoney;
 
-	public List<AllCurrency.Result> getCurrencyList() {
-		return currencyList;
+	public String getToMoney() {
+		return toMoney;
 	}
 
-	public void setCurrencyList(List<AllCurrency.Result> currencyList) {
-		this.currencyList = currencyList;
+	public void setToMoney(String toMoney) {
+		this.toMoney = toMoney;
+	}
+
+	public List<AllCurrency.Result> getAllCurrencyList() {
+		return allCurrencyList;
+	}
+
+	public void setAllCurrencyList(List<AllCurrency.Result> allCurrencyList) {
+		this.allCurrencyList = allCurrencyList;
 	}
 }

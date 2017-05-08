@@ -43,4 +43,6 @@ public class Constants {
 	public static final String TVNAME = "tvName";
 	//保存电视台的list集合
 	public static final String TVLIST = "tvList";
+	//保存所有货币的list集合
+	public static final String ALLCURRENCYLIST = "allCurrencyList";
 }

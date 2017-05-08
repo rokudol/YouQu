@@ -26,8 +26,7 @@
 
     <string name="cancel">取消</string>
     <string name="yes">确定</string>
+    <string name="from">From：</string>
+    <string name="to">To：</string>
 
-    <string name="switch_currency">请选择源币种</string>
-    <string name="target_currency">请选择目标币种</string>
-    <string name="money">请输入数额</string>
 </resources>

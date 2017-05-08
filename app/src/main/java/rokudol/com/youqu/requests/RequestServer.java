@@ -4,9 +4,9 @@ import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
+import rokudol.com.youqu.jsons.AllCurrency;
 import rokudol.com.youqu.jsons.AreaJson;
 import rokudol.com.youqu.jsons.ExChangeJson;
-import rokudol.com.youqu.jsons.AllCurrency;
 import rokudol.com.youqu.jsons.TvJson;
 import rokudol.com.youqu.jsons.TvShowJson;
 import rokudol.com.youqu.jsons.WeatherJson;
@@ -56,12 +56,12 @@ public interface RequestServer {
 	@GET("tv/query")
 	Observable<TvShowJson> getTvShow(@Query("date") String date, @Query("tvid") String tvid);
 
-
 	//获取所有货币
 	@GET("exchange/currency")
-	Observable<AllCurrency> getCurrency();
+	Observable<AllCurrency> getAllCurrency();
 
-	//汇率转换
-	@GET("exchange/convert")
+	//汇率换算
+	@GET("/exchange/convert")
 	Observable<ExChangeJson> getExchange(@Query("amount") String amount, @Query("from") String from, @Query("to") String to);
+
 }

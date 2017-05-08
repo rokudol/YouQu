@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical">
@@ -10,33 +11,86 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="选择源货币"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/margin"
+            android:text="@string/from"
+            android:textColor="?attr/colorPrimary"
             android:textSize="@dimen/text_sixteent"/>
 
-        <Spinner
-            android:id="@+id/hold_currency"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/gray"
+            android:padding="@dimen/margin">
+
+            <Spinner
+                android:id="@+id/from_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:spinnerMode="dropdown"/>
+
+            <EditText
+                android:id="@+id/from_money"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_toRightOf="@id/from_currency"
+                android:gravity="center"
+                android:inputType="numberDecimal"/>
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@string/to"
+            android:textColor="?attr/colorPrimary"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/gray"
+            android:padding="@dimen/margin">
+
+            <Spinner
+                android:id="@+id/to_currency"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:spinnerMode="dropdown"/>
+
+            <TextView
+                android:id="@+id/to_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_toRightOf="@id/to_currency"/>
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/exchange_query"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:spinnerMode="dialog"/>
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/transparent"
+            android:text="@string/query"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="@dimen/text_sixteent"/>
     </LinearLayout>
 </LinearLayout>

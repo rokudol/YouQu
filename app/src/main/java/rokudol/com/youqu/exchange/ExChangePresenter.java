@@ -7,6 +7,8 @@ import rokudol.com.youqu.base.BasePresenter;
  */
 
 public interface ExChangePresenter extends BasePresenter {
-	//请求数据
-	void requestAllCurrency();
+	//获取全部货币数据
+	void getAllCurrency();
+	//汇率换算
+	void getExchange(String fromCode,String toCode,String moeny);
 }

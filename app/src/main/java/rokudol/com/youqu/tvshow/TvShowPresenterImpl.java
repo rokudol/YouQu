@@ -34,10 +34,17 @@ public class TvShowPresenterImpl extends BasePresenterImpl<TvShowFragment, TvSho
 		this.mModel = mModel;
 	}
 
-
+	/*
+	* 将电视台的数据添加进AutoCompleteTextView中，先从缓存中获取数据，若缓存中没有数据则请求网络数据
+	* */
 	@Override
 	public void requestTv() {
-		mModel.requestTv(this);
+		tvList = SharedPreferencesUtil.getTvList(mView.getActivity(), Constants.TVLIST, "");
+		if (tvList != null) {
+			setTvData();
+		} else {
+			mModel.requestTv(this);
+		}
 	}
 
 	@Override
@@ -48,7 +55,30 @@ public class TvShowPresenterImpl extends BasePresenterImpl<TvShowFragment, TvSho
 	@Override
 	public void onTvSuccess(TvShowBean data) {
 		tvList = data.getTvResults();
-		SharedPreferencesUtil.setTvList(mView.getActivity(), Constants.TVLIST, tvList);
+		if (SharedPreferencesUtil.setTvList(mView.getActivity(), Constants.TVLIST, tvList)) {
+			setTvData();
+		}
+	}
+
+	@Override
+	public void onTvFailed(String msg) {
+
+	}
+
+	@Override
+	public void onTvShowSuccess(TvShowBean dada) {
+		tvShowList = dada.getTvShowList();
+		TvShowAdapter adapter = new TvShowAdapter(tvShowList, mView.getActivity());
+		String tvName = dada.getTvName();
+		mView.setRvItem(adapter, tvName);
+	}
+
+	@Override
+	public void onTvShowFailed(String msg) {
+		mView.showMsg(msg);
+	}
+
+	private void setTvData() {
 		final List<String> nameList = new ArrayList<>();
 		for (int i = 0; i < tvList.size(); i++) {
 			nameList.add(tvList.get(i).getName());
@@ -72,23 +102,5 @@ public class TvShowPresenterImpl extends BasePresenterImpl<TvShowFragment, TvSho
 				}
 			}
 		});
-	}
-
-	@Override
-	public void onTvFailed(String msg) {
-
-	}
-
-	@Override
-	public void onTvShowSuccess(TvShowBean dada) {
-		tvShowList = dada.getTvShowList();
-		TvShowAdapter adapter = new TvShowAdapter(tvShowList, mView.getActivity());
-		String tvName = dada.getTvName();
-		mView.setRvItem(adapter, tvName);
-	}
-
-	@Override
-	public void onTvShowFailed(String msg) {
-		mView.showMsg(msg);
 	}
 }

@@ -3,9 +3,7 @@ package rokudol.com.youqu.tvshow;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -14,7 +12,6 @@ import android.widget.TextView;
 import com.andexert.library.RippleView;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -139,41 +136,9 @@ public class TvShowFragment extends BaseFragment<TvShowPresenterImpl> implements
 		}
 	}
 
-	/*
-	* 将电视台的数据添加进AutoCompleteTextView中，先从缓存中获取数据，若缓存中没有数据则请求网络数据
-	* */
+
 	private void setTvItem() {
-		list = new ArrayList<>();
-		list = SharedPreferencesUtil.getTvList(getActivity(), Constants.TVLIST, "");
-		Log.i("`````````````", list + "");
-		if (list != null) {
-			final List<String> nameList = new ArrayList<>();
-			for (int i = 0; i < list.size(); i++) {
-				nameList.add(list.get(i).getName());
-			}
-			ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(getActivity(), R.layout.tv_item, nameList);
-			queryName.setAdapter(myAdapter);
-			queryName.setThreshold(1);
-			queryName.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-					tvName = queryName.getText() + "";
-					queryName.setText(tvName);
-					for (int i = 0; i < list.size(); i++) {
-						String name = list.get(i).getName();
-						if (name.equals(tvName)) {
-							tvId = list.get(i).getTvid();
-							SharedPreferencesUtil.setString(getActivity(), Constants.TVID, tvId);
-							SharedPreferencesUtil.setString(getActivity(), Constants.TVNAME, tvName);
-							queryName.setSelection(queryName.getText().length());
-							break;
-						}
-					}
-				}
-			});
-		} else {
-			mPresenter.requestTv();
-		}
+		mPresenter.requestTv();
 	}
 
 	@Override

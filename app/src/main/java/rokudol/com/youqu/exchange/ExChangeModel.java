@@ -1,7 +1,6 @@
 package rokudol.com.youqu.exchange;
 
 import rokudol.com.youqu.beans.ExChangeBean;
-import rokudol.com.youqu.requests.RequesCallback;
 
 /**
  * Created by rokudo on 2017/4/21.
@@ -9,5 +8,7 @@ import rokudol.com.youqu.requests.RequesCallback;
 
 public interface ExChangeModel {
 	//获取所有货币
-	void getAllCurrency(RequesCallback<ExChangeBean> callback);
+	void getAllCurrency(AllCurrencyCallback<ExChangeBean> callback);
+	//汇率换算
+	void getExchange(String fromCode,String toCode,String money,ExchangeCallback<ExChangeBean> callback);
 }

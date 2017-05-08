@@ -1,7 +1,5 @@
 package rokudol.com.youqu.jsons;
 
-import java.util.List;
-
 /**
  * Created by rokudo on 2017/4/26.
  */
@@ -18,7 +16,7 @@ public class ExChangeJson {
 	* */
 	private String status;
 	private String msg;
-	private List<Result> result;
+	private Result result;
 
 	public String getStatus() {
 		return status;
@@ -36,11 +34,11 @@ public class ExChangeJson {
 		this.msg = msg;
 	}
 
-	public List<Result> getResult() {
+	public Result getResult() {
 		return result;
 	}
 
-	public void setResult(List<Result> result) {
+	public void setResult(Result result) {
 		this.result = result;
 	}
 
