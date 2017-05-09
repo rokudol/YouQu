@@ -16,5 +16,5 @@
 		WheelPicker
 		rippleeffect
 		高德定位
-	鸣谢：spring2613的Daily项目：[Daily](https://github.com/spring2613/Daily)
+	鸣谢：spring2613的Daily项目：[我的博客](http://blog.csdn.net/guodongxiaren)  
 	      laotan7237的EasyReader项目：[易读](https://github.com/laotan7237/EasyReader)
