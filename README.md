@@ -1,20 +1,19 @@
-# YouQu
-	Ê¹ÓÃMVP+Retrofit+RxJava+ButterKnifeµÄÁ·ÊÖÏîÄ¿£¬ÏîÄ¿ÖĞÓĞÊ¹ÓÃDagger2£¬µ«ÊÇÔÚÖ®ºóµÄ¸üĞÂÖĞ¾ö¶¨ÆúÓÃ£¬Ä¿Ç°ÉĞÎ´¸ü¸Ä£¬»¶Ó­¸÷Î»star£¬fork£¬
-	Ìáissues£¡
-	Ä¿Ç°Ê¹ÓÃµ½µÄ¿â£º
-		Retrofit
-		OkHttp
-		RxJava
-		ButterKnife
-		Dagger2		
-		CircleImageView
-		Recyclerview
-		CardView
-		Design
-		Appcompat
-		Glide
-		WheelPicker
-		rippleeffect
-		¸ßµÂ¶¨Î»
-	ÃùĞ»£ºspring2613µÄDailyÏîÄ¿£º[Daily](https://github.com/spring2613/Daily)  
-	      laotan7237µÄEasyReaderÏîÄ¿£º[Ò×¶Á](https://github.com/laotan7237/EasyReader)
+ï»¿ä½¿ç”¨MVP+Retrofit+RxJava+ButterKnifeçš„ç»ƒæ‰‹é¡¹ç›®ï¼Œé¡¹ç›®ä¸­æœ‰ä½¿ç”¨Dagger2ï¼Œä½†æ˜¯åœ¨ä¹‹åçš„æ›´æ–°ä¸­å†³å®šå¼ƒç”¨ï¼Œç›®å‰å°šæœªæ›´æ”¹ï¼Œæ¬¢è¿å„ä½starï¼Œforkï¼Œ
+æissuesï¼
+ç›®å‰ä½¿ç”¨åˆ°çš„åº“ï¼š
+	Retrofit
+	OkHttp
+	RxJava
+	ButterKnife
+	Dagger2		
+	CircleImageView
+	Recyclerview
+	CardView
+	Design
+	Appcompat
+	Glide
+	WheelPicker
+	rippleeffect
+	é«˜å¾·å®šä½
+é¸£è°¢ï¼šspring2613çš„Dailyé¡¹ç›®ï¼š[Daily](https://github.com/spring2613/Daily)  
+      laotan7237çš„EasyReaderé¡¹ç›®ï¼š[æ˜“è¯»](https://github.com/laotan7237/EasyReader)
